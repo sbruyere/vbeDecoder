@@ -71,3 +71,13 @@ decodedScript = ScriptDecoder.DecodeStream(stream)
 
   --version       Display version information.
  ```
+
+ ***Windows:***
+ ```
+ vbeDecoder.CLI.Core -i script.vbe -o decoded_script.vbs
+ ```
+
+ ***Mutli-platform:***
+  ```
+  dotnet vbeDecoder.CLI.Core.dll  -i script.vbe -o decoded_script.vbs
+  ```
