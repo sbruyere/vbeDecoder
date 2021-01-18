@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/v/vbeDecoder)](https://img.shields.io/nuget/v/vbeDecoder)
+
 # vbeDecoder
 VBE decoder for encoded Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.
 
@@ -54,8 +56,6 @@ decodedScript = ScriptDecoder.DecodeStream(stream)
 
 # CLI
 ## How to use ?
-
-
 
 ***Arguments:***
 ```

@@ -12,6 +12,7 @@
     <Version>1.0.1</Version>
     <Description>VBE decoder for encoded Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.</Description>
     <RepositoryUrl>https://github.com/sbruyere/vbeDecoder</RepositoryUrl>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
