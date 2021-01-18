@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore sources/
+      run: dotnet restore source/vbeDecoder.sln
     - name: Build
-      run: dotnet build sources/libraries/vbeDecoder.NetStandard/vbeDecoder.csproj --no-restore
+      run: dotnet build source/libraries/vbeDecoder.NetStandard/vbeDecoder.csproj --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
