@@ -19,7 +19,11 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore source/vbeDecoder.sln
-    - name: Build
+    - name: Building Libraries
       run: dotnet build source/libraries/vbeDecoder.NetStandard/vbeDecoder.csproj --no-restore
+    - name: Building netStandard CLI
+      run: dotnet build source/cli-projects/vbeDecoder.CLI.NetStandard2/vbeDecoder.CLI.csproj --no-restore
+    - name: Building netCore CLI
+      run: dotnet build source/cli-projects/vbeDecoder.CLI.NetCore/vbeDecoder.CLI.Core.csproj --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test source/cli-projects/vbeDecoder.CLI.NetCore/vbeDecoder.CLI.Core.csproj --no-build --verbosity normal
