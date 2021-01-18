@@ -55,6 +55,8 @@ decodedScript = ScriptDecoder.DecodeStream(stream)
 # CLI
 ## How to use ?
 
+
+
 ***Arguments:***
 ```
   --stdin         (Group: input) (Default: false) Read from stdin

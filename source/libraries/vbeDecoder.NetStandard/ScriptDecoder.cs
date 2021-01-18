@@ -4,7 +4,7 @@ using System.IO;
 namespace vbeDecoder
 {
     /// <summary>
-    /// Decode a Visual Basic Encoded script (VBE).
+    /// Decode a Visual Basic Encoded script (VBE) / JScript Encoded (JSE).
     /// </summary>
     public static class ScriptDecoder
     {
