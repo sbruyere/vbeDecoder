@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>vbeDecoder.CLI.Core.Program</StartupObject>
+    <AssemblyName>vbeDecoder.CLI.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\vbeDecoder.CLI.NetStandard2\vbeDecoder.CLI.csproj" />
+  </ItemGroup>
+
+</Project>
