@@ -1,6 +1,7 @@
 [![NuGet](https://img.shields.io/nuget/v/vbeDecoder)](https://www.nuget.org/packages/vbeDecoder/)
 [![NuGet Download](https://img.shields.io/nuget/dt/vbeDecoder)](https://www.nuget.org/packages/vbeDecoder/)
 [![GitHub Download](https://img.shields.io/github/downloads/sbruyere/vbeDecoder/total)](https://github.com/sbruyere/vbeDecoder/releases/)
+[![.NET](https://github.com/sbruyere/vbeDecoder/actions/workflows/dotnet.yml/badge.svg)](https://github.com/sbruyere/vbeDecoder/actions/workflows/dotnet.yml)
 
 # vbeDecoder
 VBE decoder for encoded Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.
