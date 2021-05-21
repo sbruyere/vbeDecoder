@@ -4,7 +4,7 @@
 [![.NET](https://github.com/sbruyere/vbeDecoder/actions/workflows/dotnet.yml/badge.svg)](https://github.com/sbruyere/vbeDecoder/actions/workflows/dotnet.yml)
 
 # vbeDecoder
-VBE decoder for encoded Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.
+VBE decoder for Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.
 
 # What is a VBE ?
 The obfuscated VBE and JSE scripts are the result of a proprietary encoding of VBS (Visual Basic Script) and JS (JScript) scripts introduced by Microsoft in version 5 of those. 
