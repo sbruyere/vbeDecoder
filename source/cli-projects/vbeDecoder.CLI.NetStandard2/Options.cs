@@ -7,11 +7,10 @@ namespace vbeDecoder.CLI
     {
         [Option("stdin",
           Group = "input",
-          Default = false,
           HelpText = "Read from stdin")]
         public bool stdin { get; set; }
 
-        [Option('i', "input", Group = "input", Default = true, Required = true, HelpText = "Input files to be processed.")]
+        [Option('i', "input", Group = "input", Required = true, HelpText = "Input files to be processed.")]
         public IEnumerable<string> InputFiles { get; set; }
         
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace vbeDecoder
@@ -149,14 +150,23 @@ namespace vbeDecoder
             char[] script = Unescape(encodedScript);
 
             var index = -1;
+            var pos = 0;
+
+            string result;
 
             foreach (char c in script)
             {
+                
                 if (c < VBE_PERM_TRIPLET_SIZE)
                     index++;
 
                 if ((c == 9 || (c > 31 && c < 128)) && c != 60 && c != 62 && c != 64)
-                    script[index] = _permTripletTokens[c][_permIdx[index % VBE_PERM_IDX_SIZE]];
+                    script[pos] = (_permTripletTokens[c][_permIdx[index % VBE_PERM_IDX_SIZE]]);
+                else
+                    script[pos] = c;
+                
+
+                pos++;
             }
 
             return new string(script);

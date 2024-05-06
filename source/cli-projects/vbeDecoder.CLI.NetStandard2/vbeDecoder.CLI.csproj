@@ -13,4 +13,10 @@
     <ProjectReference Include="..\..\libraries\vbeDecoder.NetStandard\vbeDecoder.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Licenses.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

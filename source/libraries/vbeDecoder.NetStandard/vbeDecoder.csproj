@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>netstandard1.3;netstandard2.0;net6.0;net8.0</TargetFrameworks>
     <Company>Sylvain Bruyere</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -9,7 +9,7 @@
     <Authors>Sylvain Bruyere</Authors>
     <PackageProjectUrl>https://github.com/sbruyere/vbeDecoder</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Description>VBE decoder for encoded Visual Basic Script Encoded scripts (VBE) and JScript Encoded scripts (JSE), written in C#, and provided as a library for .Net Standard.</Description>
     <RepositoryUrl>https://github.com/sbruyere/vbeDecoder</RepositoryUrl>
     <Platforms>AnyCPU;x64;x86</Platforms>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
 namespace vbeDecoder.CLI
@@ -12,51 +13,59 @@ namespace vbeDecoder.CLI
         public static void MainRun(string[] args)
         {
             Console.Title = "vbeDecoder";
+
             Parser.Default.ParseArguments<Options>(args)
               .WithParsed(RunOptions);
         }
 
         public static void RunOptions(Options opts)
         {
-            string result = "";
+            string result;
 
             if (opts.stdin)
             {
                 Stream s = Console.OpenStandardInput();
 
                 result = ScriptDecoder.DecodeStream(s);
+
+                OutputResult(opts, result, null);
             }
 
             if (opts.InputFiles?.Any() == true)
             {
-                foreach (var encodedScript in opts.InputFiles)
+                foreach (var srcPath in opts.InputFiles)
                 {
-                    result = ScriptDecoder.DecodeFile(encodedScript);
-                    
-                    if (opts.OutputPath == null)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine($"'############################################################");
-                        Console.WriteLine($"'# vbeDecoder - by Sylvain Bruyere ");
-                        Console.WriteLine($"'# - Input File: {opts.OutputPath}");
-                        Console.WriteLine();
-                        Console.WriteLine(result);
-                    }
-                    else if (Directory.Exists(opts.OutputPath))
-                    {
-                        string newFilename = ChangeFileName(Path.GetFileName(encodedScript));
-                        string oPath = Path.Combine(opts.OutputPath, newFilename);
+                    result = ScriptDecoder.DecodeFile(srcPath);
 
-                        WriteFileResult(result, oPath);
-                    }
-                    else
-                    {
-                        string newFilename = ChangeFileName(Path.GetFileName(encodedScript));
-                        string oPath = opts.OutputPath + "-" + newFilename;
-
-                        WriteFileResult(result, oPath);
-                    }
+                    OutputResult(opts, result, ChangeFileName(Path.GetFileName(srcPath)));
                 }
+            }
+        }
+
+        private static void OutputResult(Options opts, string result, string filename)
+        {
+            if (opts.OutputPath == null)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"'############################################################");
+                Console.WriteLine($"'# vbeDecoder - by Sylvain Bruyere ");
+                Console.WriteLine($"'# - Input File: {opts.OutputPath}");
+                Console.WriteLine();
+                Console.WriteLine(result);
+            }
+            else if (Directory.Exists(opts.OutputPath))
+            {
+                string newFilename = ChangeFileName(Path.GetFileName(filename));
+                string oPath = Path.Combine(opts.OutputPath, newFilename);
+
+                WriteFileResult(result, oPath);
+            }
+            else
+            {
+                string newFilename = ChangeFileName(Path.GetFileName(filename));
+                string oPath = opts.OutputPath + "-" + newFilename;
+
+                WriteFileResult(result, oPath);
             }
         }
 
@@ -95,6 +104,9 @@ namespace vbeDecoder.CLI
                         Console.WriteLine("Canceled.");
                         break;
                 }
+            } else
+            {
+                File.WriteAllText(outputPath, result);
             }
         }
 
