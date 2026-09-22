@@ -82,3 +82,7 @@ decodedScript = ScriptDecoder.DecodeStream(stream)
   ```
   dotnet vbeDecoder.CLI.Core.dll  -i script.vbe -o decoded_script.vbs
   ```
+
+# See also
+
+* [VBReFormer](https://decompiler-vb.net/) — Visual Basic 5/6 decompiler, disassembler and compiled-UI editor by the same author (P-Code and native code, free edition).
